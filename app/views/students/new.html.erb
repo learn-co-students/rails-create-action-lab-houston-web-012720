@@ -1,1 +1,21 @@
-<!-- Create your form here -->
+<h1>Student Form</h1>
+
+<form action='/students', method='post'>
+  <label>First Name: </label>
+  <input type='text', name='first_name'>
+  <br>
+
+  <label>Last Name: </label>
+  <input type='text', name='last_name'>
+  <br>
+
+  <input type='submit', value='Submit Student'>
+</form>
+
+<%# <%= form_tag('/students') do %1> %>
+<%#   <%= label_tag(:first_name, "First Name:") %1> %>
+<%#   <%= text_field_tag(:first_name) %1> %>
+<%#   <%= label_tag(:last_name, "Last Name:") %1> %>
+<%#   <%= text_field_tag(:last_name) %1> %>
+<%#   <%= submit_tag("Create New Student") %1> %>
+<%# <% end %1> %>
