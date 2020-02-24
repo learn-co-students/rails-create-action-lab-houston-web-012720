@@ -1,5 +1,29 @@
-<div>
-  <% @students.each do |student| %>
-    <div><%= link_to student.to_s, student_path(student) %></div>
-  <% end %>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students</title>
+</head>
+<body>
+  <h1>Students list</h1>
+  <div>
+    <% @students.each do |student| %>
+      <li><%= link_to student.full_name, student_path(student) %></li>
+    <% end %>
+  </div>
+  <br>
+  <!-- <button>
+    <a href="/teachers">Teachers page</a>
+  </button> --> 
+  <%= button_to "Teachers page", teachers_path,method: :get%>
+  <button>
+    <a href="/projects">Projects page</a>
+  </button>
+  <!-- <%= button_to "Projects page", projects_path, method: :get %> -->
+  <!-- <button>
+    <a href="/students/new">Create New Student</a>
+  </button> --> 
+  <%= button_to "Add new student", new_student_path, method: :get %>
+</body>
+</html>

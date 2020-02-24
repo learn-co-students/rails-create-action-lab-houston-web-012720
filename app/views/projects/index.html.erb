@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students</title>
+</head>
+<body>
+  <h1>Projects list</h1>
+  <div>
+    <% @projects.each do |project| %>
+      <div><%= link_to project.project_name,project_path(project) %></div>
+    <% end %>
+  </div>
+  <br>
+  <button>
+    <a href="/students">Students page</a>
+  </button>
+  <button>
+    <a href="/teachers">Teachers page</a>
+  </button>
+  <button>
+    <a href="/projects/new">Create New Projects</a>
+  </button>
+</body>
+</html>

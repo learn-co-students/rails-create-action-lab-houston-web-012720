@@ -1,0 +1,10 @@
+<h1>Update <%= @student.full_name %> Information</h1>
+<%= form_tag student_path(@student)%>
+    <label>Projects List</label><br>
+    <% @projects.each do |project| %> 
+        <input type="checkbox" name="project[]" value="<%= project.id %>">
+        <label><%= project.project_name %></label><br>
+    <% end %> 
+    <br>
+    <%= submit_tag "Update" %>
+<% end %> 

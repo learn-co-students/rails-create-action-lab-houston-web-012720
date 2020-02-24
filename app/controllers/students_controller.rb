@@ -9,15 +9,27 @@ class StudentsController < ApplicationController
   end
 
   def new
+    @student = Student.new
   end
 
   def create
-    # @student = Student.new 
-    # @student.first_name = params[:first_name]
-    # @student.last_name = params[:last_name]
-    # @student.save
-    @student = Student.create(first_name: params[:first_name], last_name: params[:last_name])
+    @student = Student.create(student_params)
     redirect_to student_path(@student)
   end
+
+  def edit 
+    @student = Student.find(params[:id])
+    @teachers = Teacher.all 
+    @projects = Project.select{|project| project.student_id != @student.id}
+  end
+
+  def update 
+
+  end
+
+  private 
+    def student_params 
+      params.require(:student).permit(:first_name, :last_name, :age)
+    end 
 
 end

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= @project.project_name %></h1>
+    <label>Student</label>
+    <% if @project.student_id %>
+        <p><%= @project.student.full_name %></p>
+    <% else %>
+        <p>no student</p>
+    <% end %>
+    <br>
+    <label>Teacher</label>
+    <% if @project.teacher_id %>
+        <p><%= @project.teacher.full_name %></p>
+    <% else %>
+        <p>no teacher</p>
+    <% end %>
+    <br>
+    <button>
+        <a href="/projects">Projects page</a>
+    </button> 
+</body>
+</html>

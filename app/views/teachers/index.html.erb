@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students</title>
+</head>
+<body>
+  <h1>Teachers list</h1>
+  <div>
+    <% @teachers.each do |teacher| %>
+      <div><%= link_to teacher.full_name, teacher_path(teacher) %></div>
+    <% end %>
+  </div>
+  <br>
+  <button>
+    <a href="/students">Students page</a>
+  </button>
+  <button>
+    <a href="/projects">Projects page</a>
+  </button>
+  <button>
+    <a href="/teachers/new">Create New Teachers</a>
+  </button>
+</body>
+</html>
